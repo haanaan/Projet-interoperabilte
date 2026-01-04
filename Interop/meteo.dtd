@@ -1,0 +1,13 @@
+<!ELEMENT meteo (jour+)>
+<!ELEMENT jour (ville, matin, midi, soir)>
+<!ATTLIST jour date CDATA #REQUIRED>
+<!ELEMENT ville (#PCDATA)>
+<!ELEMENT matin (temperature, temps, vent)>
+<!ELEMENT midi (temperature, temps, vent)>
+<!ELEMENT soir (temperature, temps, vent)>
+<!ELEMENT temperature (#PCDATA)>
+<!ATTLIST temperature unite (C|F) "C">
+<!ELEMENT temps (#PCDATA)>
+<!ATTLIST temps type (soleil|nuageux|pluie|neige|orage|brouillard) #REQUIRED>
+<!ELEMENT vent (#PCDATA)>
+<!ATTLIST vent force (faible|modere|fort) #IMPLIED>
