@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Circulations vélos Nancy</h1>
+        <p>Décision vélos par rapport à la météo</p>
+    </header>
+
+    <main>
+        <section id="carte-section">
+            <h2>Stations VelOstanlib</h2>
+            <div id="carte"></div>
+            <p id="status">Chargement stations... 
+                <p class="api-link"> 
+                     <a href="https://api.cyclocity.fr/contracts/nancy/gbfs/gbfs.json" target="_blank">[GBFS API]</a>
+                </p>
+            </p>
+        </section>
+
+        <section id="infos-section">
+            <div class="info-card" id="qualite-air">
+                <h3>Qualite de l'air</h3>
+                <div id="air-indice">Chargement...</div>
+                <p class="api-link">
+                    <a href="https://services3.arcgis.com/Is0UwT37raQYl9Jj/arcgis/rest/services/ind_grandest/FeatureServer/0/query?where=lib_zone%3D%27Nancy%27&outFields=*&f=pjson" target="_blank">[ATMO API]</a>
+                </p>
+            </div>
+            
+            <div class="info-card" id="meteo">
+                <h3>Meteo actuelle</h3>
+                <div id="meteo-details">Chargement...</div>
+                <p class="api-link">
+                    <a href="https://api.open-meteo.com/v1/forecast?latitude=48.692&longitude=6.184&current=temperature_2m" target="_blank">[Meteo API]</a>
+                </p>
+            </div>
+            
+            <div class="info-card decision" id="decision">
+                <h3>Recommandation velo</h3>
+                <div id="recommandation">Attente donnees...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="https://github.com/haanaan/Projet-interoperabilte.git" target="_blank">Depot github</a></span></p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

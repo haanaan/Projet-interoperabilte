@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #c6def6;
+    min-height: 100vh;
+}
+
+header {
+    background: #69b4ff;
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    display: grid;
+    gap: 2rem;
+}
+
+#carte-section {
+    background: white;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
+}
+
+#carte {
+    height: clamp(300px, 50vh, 500px);
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.loading {
+    text-align: center;
+    color: #666;
+    margin-top: 1rem;
+    font-style: italic;
+}
+
+#infos-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.info-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.info-card.decision {
+    grid-column: 1 / -1;
+    background: #55247b;
+    color: white;
+}
+
+.info-card.decision h3 {
+    color: white;
+}
+
+footer {
+    background: #69b4ff;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.error {
+    color: #e74c3c;
+    background: #fdf2f2;
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid #e74c3c;
+}
+#status {
+    font-size: 1rem;
+    white-space: nowrap;
+}
+#status a {
+    font-size: 0.9em;
+    margin-left: 0.5rem;
+}
+.api-link {
+    font-size: 0.85em;
+    text-align: center;
+    margin-top: 0.3rem;
+    padding-top: 0.3rem;
+    border-top: 1px solid #eee;
+}
+
+.api-link a {
+    color: #1c5689;
+    text-decoration: none;
+}
+.api-link a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+        gap: 1rem;
+    }
+    
+    #infos-section {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-card {
+        padding: 1rem;
+    }
+    
+    header {
+        padding: 1.5rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    #carte {
+        height: 300px;
+    }
+}
+
+.leaflet-container {
+    border-radius: 12px;
+}
